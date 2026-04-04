@@ -11,3 +11,5 @@ dependencies:
   - scikit-learn>=1.6.0            # Latest stable for ML models later
   - jupyter                        # Comes with ipykernel automatically
   - pip                            # For pip-installed packages
+  - pip:
+      - tldextract>=3.4.0           # For URL parsing, latest stable
