@@ -1,2 +1,3 @@
-# phishing-url-detector
-Project for my course WIE2003 — Introduction to Data Science
+# Welcome to your Lovable project
+
+TODO: Document your project here
