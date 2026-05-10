@@ -3,18 +3,18 @@ import PnNavbar from "@/components/PnNavbar";
 import PnFooter from "@/components/PnFooter";
 
 const features = [
-  { icon: "bi-cpu", title: "ML-Powered Detection", text: "Trained and tested on 2,000+ URLs in Google Colab using state-of-the-art techniques." },
-  { icon: "bi-diagram-3", title: "XGBoost Algorithm", text: "Gradient-boosted decision trees deliver fast, highly accurate phishing classification." },
-  { icon: "bi-sliders", title: "15 Feature Extractions", text: "Comprehensive URL, domain and script-level signals analyzed in real time." },
-  { icon: "bi-shield-check", title: "Domain & Script Verify", text: "Validates domains, URL structure, and embedded scripts to flag malicious patterns." },
-  { icon: "bi-lightning-charge", title: "Real-Time Analysis", text: "Get verdicts in under a second — no signups, no friction, just results." },
-  { icon: "bi-lock", title: "Privacy First", text: "URLs are analyzed locally in your session. We don't store your data." },
+  { icon: "bi-cpu", title: "ML-Powered Detection", text: "Trained and tested on 115,000+ URLs using various different ML models for the best results." },
+  { icon: "bi-diagram-3", title: "XXX Algorithm", text: "XXX." },
+  { icon: "bi-sliders", title: "22 Feature Extractions", text: "Features based on 6 categories: Length, Character-Composition, Special-Characters, Structural, Protocol and Entropy." },
+  { icon: "bi-shield-check", title: "Domain Verification", text: "Validates domains purely on their lexical features." },
+  { icon: "bi-lightning-charge", title: "Real-Time Analysis", text: "Get verdicts in under a second — no friction, just results." },
+  { icon: "bi-lock", title: "Privacy First", text: "URLs are analyzed locally in your session, ensuring privacy." },
 ];
 
 const stats = [
-  { num: "98.7%", label: "Accuracy" },
-  { num: "2,000+", label: "URLs Trained" },
-  { num: "15", label: "Features" },
+  { num: "XX.X%", label: "Accuracy" },
+  { num: "115,000+", label: "URLs Trained" },
+  { num: "22", label: "Features" },
   { num: "<1s", label: "Latency" },
 ];
 

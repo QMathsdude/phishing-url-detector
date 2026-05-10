@@ -6,26 +6,53 @@ const featureGroups = [
     overline: "Model & Training",
     title: "Model & Training",
     items: [
-      { icon: "bi-diagram-3", title: "XGBoost Classifier", text: "Gradient boosted trees tuned for binary phishing classification." },
-      { icon: "bi-cpu", title: "2,000+ URL Dataset", text: "Balanced dataset of legitimate and phishing URLs trained in Google Colab." },
-      { icon: "bi-graph-up", title: "98.7% Accuracy", text: "Validated on a held-out test split for reliable real-world performance." },
+      { icon: "bi-diagram-3", title: "XXX Algorithm", text: "XXX" },
+      { icon: "bi-cpu", title: "115,000+ URLs", text: "Dataset of 85% legitimate and 15% phishing URLs. Imbalance was tackled using XXX." },
+      { icon: "bi-graph-up", title: "XX.X% Accuracy", text: "XXX." },
     ],
   },
   {
-    overline: "Feature Engineering",
-    title: "Feature Engineering",
-    items: [
-      { icon: "bi-link-45deg", title: "URL Lexical Features", text: "Length, special characters, subdomains, IP-as-hostname and more." },
-      { icon: "bi-globe", title: "Domain Signals", text: "Age, WHOIS, DNS records, and registration patterns." },
-      { icon: "bi-code-slash", title: "Page & Script Cues", text: "Embedded scripts, redirects, iFrames and form actions." },
-    ],
+  overline: "Feature Engineering",
+  title: "Feature Engineering",
+  items: [
+    {
+      icon: "bi-rulers",
+      title: "Length",
+      text: "Total length of URL, domain, TLD, path, and query."
+    },
+    {
+      icon: "bi-fonts",
+      title: "Character Composition",
+      text: "Letter, digit, special-character counts and ratios."
+    },
+    {
+      icon: "bi-at",
+      title: "Special Characters",
+      text: "Counts of 6 characters:\n = ? & . - _ and /."
+    },
+    {
+      icon: "bi-slash",
+      title: "Structural & Hierarchical",
+      text: "Subdomain-count and presence of IP as hostname."
+    },
+    {
+      icon: "bi-lock",
+      title: "Protocol",
+      text: "Presence of HTTPS protocol (TLS/SSL present)."
+    },
+    {
+      icon: "bi-shuffle",
+      title: "Entropy",
+      text: "Shannon entropy of the whole URL string."
+    }
+  ]
   },
   {
     overline: "Experience",
     title: "Experience",
     items: [
       { icon: "bi-lightning-charge", title: "Sub-second Latency", text: "Instant verdicts so you can decide and move on." },
-      { icon: "bi-lock", title: "Privacy First", text: "Your URLs stay in your session — nothing persisted." },
+      { icon: "bi-lock", title: "Privacy First", text: "Your URLs stay in your session — and remain private." },
       { icon: "bi-phone", title: "Responsive UI", text: "Polished experience across desktop, tablet and mobile." },
     ],
   },
@@ -58,7 +85,7 @@ const Features = () => {
                     <i className={`bi ${f.icon}`} />
                   </div>
                   <h3>{f.title}</h3>
-                  <p>{f.text}</p>
+                  <p className="whitespace-pre-line">{f.text}</p>
                 </div>
               </div>
             ))}
