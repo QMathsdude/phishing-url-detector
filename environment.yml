@@ -11,6 +11,8 @@ dependencies:
   - scikit-learn>=1.6.0            # Latest stable for ML models later
   - xgboost>=2.0.0                 # Stable version with Python 3.12 support
   - lightgbm>=4.1.0                # Stable version with Python 3.12 support
+  - imbalanced-learn>=0.14.1       # Stable version with Python 3.12 support
+  - scikit-learn-intelex           # Speed-up scikit for Intel CPUs
   - jupyter                        # Comes with ipykernel automatically
   - pip                            # For pip-installed packages
   - pip:
