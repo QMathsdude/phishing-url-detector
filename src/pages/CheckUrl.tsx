@@ -9,52 +9,25 @@ const CheckUrl = () => {
   const [result, setResult] = useState<null | { safe: boolean; url: string; score: number, components: Record<string, string>, features: Record<string, number> }>(null);
   const [loading, setLoading] = useState(false);
 
-  // Fake API response
-  // const featuresAPI = {
-  //   url_len: 86,           
-  //   dom_len: 42,           
-  //   tld_len: 3,            
-  //   is_ip: 0,              
-  //   subdom_cnt: 3,         
-  //   letter_cnt: 65,        
-  //   digit_cnt: 0,          
-  //   special_cnt: 8,        
-  //   eq_cnt: 1,             
-  //   qm_cnt: 1,             
-  //   amp_cnt: 0,            
-  //   dot_cnt: 5,             
-  //   dash_cnt: 1,          
-  //   under_cnt: 0,          
-  //   letter_ratio: 0.76,    
-  //   digit_ratio: 0.0,      
-  //   spec_ratio: 0.09,      
-  //   is_https: 0,           
-  //   slash_cnt: 2,          
-  //   entropy: 4.2,          
-  //   path_len: 12,          
-  //   query_len: 16          
-  // };
-  // const dataAPI = {
-  //   safe: true,
-  //   score: 10,
-  //   features: featuresAPI,
-  // }
-
   // Logic of classifying legitimate or phishing
   const handleAnalyze = async (e?: React.FormEvent) => {
     // When form submitted, prevent page reload
     e?.preventDefault();
-    // TODO: INPUT VALIDATION
-    if (!url.trim()) return;
+    // Input Validation (empty or invalid URL)
+    let isValidUrl = false;
+    try{
+      const testUrl = new URL(url);
+      isValidUrl = (testUrl.protocol === "http:" || testUrl.protocol === "https:") && testUrl.hostname !== "";
+    } catch {
+      isValidUrl = false;
+    }
+    if (!url.trim() || !isValidUrl) {
+      alert("Please enter a valid URL starting with http:// or https://");
+      return;
+    }
     // Show loading spinner + clear previous results
     setLoading(true);
     setResult(null);
-    // Simulated API delay
-    // setTimeout(() => {
-    //   // Set results after receiving API response + stop loading spinner
-    //   setResult({ safe: dataAPI.safe, url, score: dataAPI.score, features: dataAPI.features });
-    //   setLoading(false);
-    // }, 1000);
 
     try {
       // Make the actual API call
@@ -99,7 +72,7 @@ const CheckUrl = () => {
               Add the URL of a website to verify whether it is{" "}
               <span style={{ color: "var(--brand)", fontWeight: 600 }}>legitimate</span> or{" "}
               <span style={{ color: "var(--danger)", fontWeight: 600 }}>phishing</span>.
-              Our XXX model evaluates 22 distinct features to deliver an instant verdict.
+              Our Random Forest model evaluates 22 distinct features to deliver an instant verdict.
             </p>
             <ul className="list-unstyled mt-4" style={{ color: "var(--text-muted)" }}>
               <li className="mb-2"><i className="bi bi-check-circle me-2" style={{ color: "var(--accent)" }}></i>Instant analysis</li>
@@ -144,7 +117,7 @@ const CheckUrl = () => {
                         <h5 className="mb-1" style={{ color: result.safe ? "var(--accent)" : "var(--danger)" }}>
                           {result.safe ? "Looks Legitimate" : "Potential Phishing Detected"}
                         </h5>
-                        <small style={{ color: "var(--text-muted)" }}>Risk: {result.score}%</small>
+                        <small style={{ color: "var(--text-muted)" }}>Phishing Risk: {result.score * 100}%</small>
                       </div>
                       <small style={{ color: "var(--text-muted)", wordBreak: "break-all", overflowWrap: "anywhere" }} className="d-block">
                         {result.url}

@@ -4,7 +4,7 @@ import PnFooter from "@/components/PnFooter";
 
 const features = [
   { icon: "bi-cpu", title: "ML-Powered Detection", text: "Trained and tested on 115,000+ URLs using various different ML models for the best results." },
-  { icon: "bi-diagram-3", title: "XXX Algorithm", text: "XXX." },
+  { icon: "bi-diagram-3", title: "Random Forest Algorithm", text: "An ensemble of decision trees that vote together for the most reliable prediction." },
   { icon: "bi-sliders", title: "22 Feature Extractions", text: "Features based on 6 categories: Length, Character-Composition, Special-Characters, Structural, Protocol and Entropy." },
   { icon: "bi-shield-check", title: "Domain Verification", text: "Validates domains purely on their lexical features." },
   { icon: "bi-lightning-charge", title: "Real-Time Analysis", text: "Get verdicts in under a second — no friction, just results." },
@@ -12,7 +12,7 @@ const features = [
 ];
 
 const stats = [
-  { num: "XX.X%", label: "Accuracy" },
+  { num: "97.8%", label: "Accuracy" },
   { num: "115,000+", label: "URLs Trained" },
   { num: "22", label: "Features" },
   { num: "<1s", label: "Latency" },

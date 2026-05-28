@@ -6,9 +6,9 @@ const featureGroups = [
     overline: "Model & Training",
     title: "Model & Training",
     items: [
-      { icon: "bi-diagram-3", title: "XXX Algorithm", text: "XXX" },
-      { icon: "bi-cpu", title: "115,000+ URLs", text: "Dataset of 85% legitimate and 15% phishing URLs. Imbalance was tackled using XXX." },
-      { icon: "bi-graph-up", title: "XX.X% Accuracy", text: "XXX." },
+      { icon: "bi-diagram-3", title: "Random Forest Algorithm", text: "The best compared many different models such as Gradient Boosting, Logistic Regression and SVM." },
+      { icon: "bi-cpu", title: "115,000+ URLs", text: "Dataset of 85% legitimate and 15% phishing URLs. Imbalance was tackled using SMOTE." },
+      { icon: "bi-graph-up", title: "97.8% Accuracy", text: "Recall 93.6%, Precision 91.6%, F1-Score 92.6%." },
     ],
   },
   {
