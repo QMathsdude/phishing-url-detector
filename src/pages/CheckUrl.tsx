@@ -15,14 +15,21 @@ const CheckUrl = () => {
     e?.preventDefault();
     // Input Validation (empty or invalid URL)
     let isValidUrl = false;
-    try{
+    try {
       const testUrl = new URL(url);
-      isValidUrl = (testUrl.protocol === "http:" || testUrl.protocol === "https:") && testUrl.hostname !== "";
+      // 1. Must be http or https (case‑insensitive – URL constructor already lowercases)
+      const isHttp = testUrl.protocol === "http:" || testUrl.protocol === "https:";
+      // 2. Hostname must contain a dot (e.g., example.com) and not be empty
+      const hasDotInHost = testUrl.hostname.includes(".") && testUrl.hostname !== "";
+      isValidUrl = isHttp && hasDotInHost;
     } catch {
       isValidUrl = false;
     }
-    if (!url.trim() || !isValidUrl) {
-      alert("Please enter a valid URL starting with http:// or https://");
+    // Also ensure the raw input contains "://" (to reject "http:hello")
+    const hasDoubleSlash = url.includes("://");
+
+    if (!url.trim() || !isValidUrl || !hasDoubleSlash) {
+      alert("Please enter a valid URL starting with http:// or https:// and contains a TLD (e.g., https://example.com)");
       return;
     }
     // Show loading spinner + clear previous results
