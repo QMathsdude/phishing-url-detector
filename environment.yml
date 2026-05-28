@@ -8,6 +8,7 @@ dependencies:
   - numpy>=1.26.0                  # Required for pandas 2.x compatibility
   - matplotlib>=3.3.4              # Minimum for scikit-learn compatibility
   - seaborn>=0.12.0                # Modern API, works with pandas 2.x
+  - joblib>=1.2.0                  # For parallel processing in scikit-learn
   - scikit-learn>=1.6.0            # Latest stable for ML models later
   - xgboost>=2.0.0                 # Stable version with Python 3.12 support
   - lightgbm>=4.1.0                # Stable version with Python 3.12 support
