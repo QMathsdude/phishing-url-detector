@@ -124,7 +124,7 @@ const CheckUrl = () => {
                         <h5 className="mb-1" style={{ color: result.safe ? "var(--accent)" : "var(--danger)" }}>
                           {result.safe ? "Looks Legitimate" : "Potential Phishing Detected"}
                         </h5>
-                        <small style={{ color: "var(--text-muted)" }}>Phishing Risk: {result.score * 100}%</small>
+                        <small style={{ color: "var(--text-muted)" }}>Phishing Risk: {(result.score * 100).toFixed(2)}%</small>
                       </div>
                       <small style={{ color: "var(--text-muted)", wordBreak: "break-all", overflowWrap: "anywhere" }} className="d-block">
                         {result.url}
