@@ -66,21 +66,21 @@ This project is split into two sections, EDA and ML.
 
 ![img2](/img/rf-importance.png)
 
-- Step 1: Imbalance — Determine the best model (recall) of 22 features with various imbalance fixing methods:
+- **Step 1: Imbalance** — Determine the best model (recall) of 22 features with various imbalance fixing methods:
     - Weighted class
     - Balanced RF
     - SMOTE
     - ADASYN 
-- Step 2: Feature Trimming — Try make the model lightweight while maintaining high recall:
+- **Step 2: Feature Trimming** — Try make the model lightweight while maintaining high recall:
     - Correlation Matrix
     - Random Forest Importance
-- Step 3: Tuning — Hyperparameter tuning model to make it the most optimized.
-    - **Final model = RF + SMOTE + 13 Features**
+- **Step 3: Tuning** — Hyperparameter tuning model to make it the most optimized.
+    - ***Final Model = RF + SMOTE + 13 Features***
 
 ---
 
 ## 📊 Data Product
-- Data product link: 
+- Data product: https://phishing-url-detector-ten.vercel.app/
 
 - High level view of how data product works:
 ![img3](/img/high-level-process.png)
