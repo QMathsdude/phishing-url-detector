@@ -46,6 +46,18 @@ const PnNavbar = () => {
             >
               Cyberthreat Live Map
             </NavLink>
+
+            {/* GitHub icon link – to the right of threat-map */}
+            <a
+              href="https://github.com/QMathsdude/phishing-url-detector"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="pn-nav-link pn-nav-link--icon"
+              onClick={() => setMenuOpen(false)}
+              aria-label="GitHub repository"
+            >
+              <i className="bi bi-github" style={{ fontSize: "1.25rem" }}></i>
+            </a>
           </div>
         </div>
       </div>
@@ -54,4 +66,3 @@ const PnNavbar = () => {
 };
 
 export default PnNavbar;
-
